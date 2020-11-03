@@ -99,16 +99,16 @@ nav .navegacion {
 
 nav .navegacion li {
   margin: 1rem 0;
-}
 
-nav .navegacion li a {
-  font-size: 1.4rem;
-  color: var(--color-principal);
-  text-decoration: none;
-  transition: color 0.3s linear;
+  a {
+    font-size: 1.4rem;
+    color: var(--color-principal);
+    text-decoration: none;
+    transition: color 0.3s linear;
 
-  @media (min-width: 2000px) {
-    font-size: 1.8rem;
+    @media (min-width: 2000px) {
+      font-size: 1.8rem;
+    }
   }
 }
 

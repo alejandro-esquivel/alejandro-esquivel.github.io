@@ -1,8 +1,8 @@
 @import 'fonts.css';
 :root {
-  --imagen-fondo: url('../images/fondo.jpg');
-  --fuente-titulos: 'Roboto';
-  --fuente-texto: 'Open Sans';
+  --imagen-fondo: url("../images/fondo.jpg");
+  --fuente-titulos: "Roboto";
+  --fuente-texto: "Open Sans";
   --color-nav: #a72608;
   --color-principal: #e9e9ec;
   --color-enfasis: #ffe74c;
@@ -101,16 +101,25 @@ nav .navegacion {
     margin-left: 8rem;
   }
 }
+@media (min-width: 2000px) {
+  nav .navegacion {
+    margin-left: 13.7rem;
+  }
+}
 
 nav .navegacion li {
   margin: 1rem 0;
 }
-
 nav .navegacion li a {
   font-size: 1.4rem;
   color: var(--color-principal);
   text-decoration: none;
   transition: color 0.3s linear;
+}
+@media (min-width: 2000px) {
+  nav .navegacion li a {
+    font-size: 1.8rem;
+  }
 }
 
 nav .navegacion li a:hover {
@@ -157,6 +166,11 @@ nav .redes .contenedorLogos a img {
 @media (min-width: 1900px) {
   nav .redes {
     margin-left: 8rem;
+  }
+}
+@media (min-width: 2000px) {
+  nav .redes {
+    margin-left: 13.7rem;
   }
 }
 
