@@ -7,6 +7,7 @@
   --color-nav: #a72608;
   --color-principal: #e9e9ec;
   --color-enfasis: #ffe74c;
+  --color-oscuro: #272822;
 }
 
 * {
@@ -60,6 +61,24 @@ nav h3 {
   font-weight: 300;
 }
 
+nav .navegacion {
+  list-style: none;
+  margin-top: 10rem;
+  margin-right: auto;
+  margin-left: 2rem;
+}
+
+nav .navegacion li a {
+  font-size: 1.3rem;
+  color: var(--color-principal);
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+
+nav .navegacion li a:hover {
+  color: var(--color-enfasis);
+}
+
 section {
   display: flex;
   width: 75%;
@@ -98,11 +117,11 @@ section {
   color: var(--color-enfasis);
   border: 2px solid var(--color-enfasis);
   border-radius: 14px;
+  transition: color 0.2s linear, border-color 0.2s linear;
 }
 
 .portada a:hover {
   cursor: pointer;
   color: var(--color-principal);
-  background-color: var(--color-enfasis);
   border-color: var(--color-principal);
 }
