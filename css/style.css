@@ -102,4 +102,7 @@ section {
 
 .portada a:hover {
   cursor: pointer;
+  color: var(--color-principal);
+  background-color: var(--color-enfasis);
+  border-color: var(--color-principal);
 }
