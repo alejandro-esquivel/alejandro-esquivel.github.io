@@ -24,8 +24,7 @@
     url('/fonts/openSans/open-sans-v18-latin-regular.woff2') format('woff2'),
     url('/fonts/openSans/open-sans-v18-latin-regular.woff') format('woff'),
     url('/fonts/openSans/open-sans-v18-latin-regular.ttf') format('truetype'),
-    url('/fonts/openSans/open-sans-v18-latin-regular.svg#OpenSans')
-      format('svg');
+    url('/fonts/openSans/open-sans-v18-latin-regular.svg#OpenSans') format('svg');
 }
 /* open-sans-700 - latin */
 @font-face {
@@ -49,8 +48,7 @@
   font-weight: 300;
   src: url('fonts/roboto/roboto-v20-latin-300.eot');
   src: local('Roboto Light'), local('Roboto-Light'),
-    url('fonts/roboto/roboto-v20-latin-300.eot?#iefix')
-      format('embedded-opentype'),
+    url('fonts/roboto/roboto-v20-latin-300.eot?#iefix') format('embedded-opentype'),
     url('fonts/roboto/roboto-v20-latin-300.woff2') format('woff2'),
     url('fonts/roboto/roboto-v20-latin-300.woff') format('woff'),
     url('fonts/roboto/roboto-v20-latin-300.ttf') format('truetype'),
@@ -77,8 +75,7 @@
   font-weight: 700;
   src: url('fonts/roboto/roboto-v20-latin-700.eot');
   src: local('Roboto Bold'), local('Roboto-Bold'),
-    url('fonts/roboto/roboto-v20-latin-700.eot?#iefix')
-      format('embedded-opentype'),
+    url('fonts/roboto/roboto-v20-latin-700.eot?#iefix') format('embedded-opentype'),
     url('fonts/roboto/roboto-v20-latin-700.woff2') format('woff2'),
     url('fonts/roboto/roboto-v20-latin-700.woff') format('woff'),
     url('fonts/roboto/roboto-v20-latin-700.ttf') format('truetype'),

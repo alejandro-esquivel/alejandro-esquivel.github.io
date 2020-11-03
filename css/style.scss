@@ -1,8 +1,9 @@
 @import 'fonts.css';
+
 :root {
-  --imagen-fondo: url("../images/fondo.jpg");
-  --fuente-titulos: "Roboto";
-  --fuente-texto: "Open Sans";
+  --imagen-fondo: url('../images/fondo.jpg');
+  --fuente-titulos: 'Roboto';
+  --fuente-texto: 'Open Sans';
   --color-nav: #a72608;
   --color-principal: #e9e9ec;
   --color-enfasis: #ffe74c;
@@ -41,9 +42,7 @@ nav {
   width: 28%;
   height: 100%;
   position: fixed;
-}
-@media (min-width: 1200px) {
-  nav {
+  @media (min-width: 1200px) {
     width: 25%;
   }
 }
@@ -58,9 +57,7 @@ nav .usuario {
 nav h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
-}
-@media (min-width: 1900px) {
-  nav h2 {
+  @media (min-width: 1900px) {
     font-size: 1.8rem;
   }
 }
@@ -68,9 +65,7 @@ nav h2 {
 nav h3 {
   font-size: 1.2rem;
   font-weight: 300;
-}
-@media (min-width: 1900px) {
-  nav h3 {
+  @media (min-width: 1900px) {
     font-size: 1.5rem;
   }
 }
@@ -80,24 +75,20 @@ nav .navegacion {
   margin-top: 10rem;
   margin-right: auto;
   margin-left: 2.2rem;
-}
-@media (min-width: 1200px) {
-  nav .navegacion {
+
+  @media (min-width: 1200px) {
     margin-left: 3.5rem;
   }
-}
-@media (min-width: 1200px) {
-  nav .navegacion {
+
+  @media (min-width: 1200px) {
     margin-left: 3.5rem;
   }
-}
-@media (min-width: 1440px) {
-  nav .navegacion {
+
+  @media (min-width: 1440px) {
     margin-left: 5.3rem;
   }
-}
-@media (min-width: 1900px) {
-  nav .navegacion {
+
+  @media (min-width: 1900px) {
     margin-left: 8rem;
   }
 }
@@ -122,40 +113,38 @@ nav .redes {
   margin-bottom: 8rem;
   margin-right: auto;
   margin-left: 2.2rem;
-}
-nav .redes h2 {
-  font-weight: 300;
-  display: block;
-}
-nav .redes .contenedorLogos {
-  margin-top: 1.5rem;
-}
-nav .redes .contenedorLogos a {
-  width: 3rem;
-  height: 3rem;
-  margin-right: 1rem;
-}
-nav .redes .contenedorLogos a img {
-  width: inherit;
-  height: inherit;
-}
-@media (min-width: 1200px) {
-  nav .redes {
+
+  h2 {
+    font-weight: 300;
+    display: block;
+  }
+
+  .contenedorLogos {
+    margin-top: 1.5rem;
+    a {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 1rem;
+      img {
+        width: inherit;
+        height: inherit;
+      }
+    }
+  }
+
+  @media (min-width: 1200px) {
     margin-left: 3.5rem;
   }
-}
-@media (min-width: 1300px) {
-  nav .redes {
+
+  @media (min-width: 1300px) {
     margin-left: 3.5rem;
   }
-}
-@media (min-width: 1440px) {
-  nav .redes {
+
+  @media (min-width: 1440px) {
     margin-left: 5.3rem;
   }
-}
-@media (min-width: 1900px) {
-  nav .redes {
+
+  @media (min-width: 1900px) {
     margin-left: 8rem;
   }
 }
@@ -174,9 +163,7 @@ section {
   background-color: unset;
   justify-content: center;
   align-items: center;
-}
-@media print {
-  .portada {
+  @media print {
     display: none;
   }
 }
@@ -211,5 +198,3 @@ section {
   color: var(--color-principal);
   border-color: var(--color-principal);
 }
-
-/*# sourceMappingURL=style.css.map */
