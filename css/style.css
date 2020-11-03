@@ -39,7 +39,7 @@ nav {
   background-color: var(--color-nav);
   color: var(--color-principal);
   width: 25%;
-  height: 50rem;
+  height: 100%;
   position: fixed;
 }
 
