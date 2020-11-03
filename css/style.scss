@@ -91,6 +91,10 @@ nav .navegacion {
   @media (min-width: 1900px) {
     margin-left: 8rem;
   }
+
+  @media (min-width: 2000px) {
+    margin-left: 13.7rem;
+  }
 }
 
 nav .navegacion li {
@@ -102,6 +106,10 @@ nav .navegacion li a {
   color: var(--color-principal);
   text-decoration: none;
   transition: color 0.3s linear;
+
+  @media (min-width: 2000px) {
+    font-size: 1.7rem;
+  }
 }
 
 nav .navegacion li a:hover {
