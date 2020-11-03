@@ -1,0 +1,105 @@
+@import 'fonts.css';
+
+:root {
+  --imagen-fondo: url('../images/fondo.jpg');
+  --fuente-titulos: 'Roboto';
+  --fuente-texto: 'Open Sans';
+  --color-nav: #a72608;
+  --color-principal: #e9e9ec;
+  --color-enfasis: #ffe74c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 76.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: var(--imagen-fondo);
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.contenedor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--fuente-titulos);
+  background-color: var(--color-nav);
+  color: var(--color-principal);
+  width: 25%;
+  height: 50rem;
+  position: fixed;
+}
+
+nav img {
+  width: 10rem;
+  height: 10rem;
+  margin-top: 5rem;
+  border-radius: 50%;
+}
+
+nav h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+nav h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+section {
+  display: flex;
+  width: 75%;
+  margin-left: auto;
+  flex-direction: column;
+  background-color: #272822;
+  height: 100vh;
+  flex: 1 0 auto;
+}
+
+.portada {
+  background-color: unset;
+  justify-content: center;
+  align-items: center;
+}
+
+.portada h1 {
+  color: var(--color-principal);
+  font-family: var(--fuente-texto) sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  padding: 0 3rem 1rem 3rem;
+  text-align: center;
+}
+
+.portada h1 b {
+  color: var(--color-enfasis);
+}
+
+.portada a {
+  background: none;
+  font-size: 2rem;
+  font-weight: 300;
+  text-decoration: none;
+  padding: 1.2rem 1.7rem;
+  color: var(--color-enfasis);
+  border: 2px solid var(--color-enfasis);
+  border-radius: 14px;
+}
+
+.portada a:hover {
+  cursor: pointer;
+}
