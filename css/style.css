@@ -54,6 +54,11 @@ nav .usuario {
   margin-top: 5rem;
   border-radius: 50%;
 }
+@media (min-width: 2000px) {
+  nav .usuario {
+    margin-top: 14rem;
+  }
+}
 
 nav h2 {
   font-size: 1.5rem;
