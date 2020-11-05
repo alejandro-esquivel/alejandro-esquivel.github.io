@@ -3,8 +3,8 @@
   --imagen-fondo: url("../images/fondo.jpg");
   --fuente-titulos: "Roboto";
   --fuente-texto: "Open Sans";
-  --color-nav: #a72608;
-  --color-principal: #e9e9ec;
+  --color-secundario: #a72608;
+  --color-blanco: #e9e9ec;
   --color-enfasis: #ffe74c;
   --color-oscuro: #272822;
 }
@@ -12,6 +12,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -37,8 +38,8 @@ nav {
   align-items: center;
   justify-content: center;
   font-family: var(--fuente-titulos);
-  background-color: var(--color-nav);
-  color: var(--color-principal);
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
   width: 28%;
   height: 100%;
   position: fixed;
@@ -92,7 +93,7 @@ nav .wrapper .navegacion li {
 }
 nav .wrapper .navegacion li a {
   font-size: 1.4rem;
-  color: var(--color-principal);
+  color: var(--color-blanco);
   text-decoration: none;
   transition: color 0.3s linear;
 }
@@ -152,8 +153,8 @@ section.portada {
   align-items: center;
 }
 section.portada h1 {
-  color: var(--color-principal);
-  font-family: var(--fuente-texto) sans-serif;
+  color: var(--color-blanco);
+  font-family: var(--fuente-texto);
   font-size: 2.5rem;
   font-weight: 300;
   padding: 0 3rem;
@@ -176,8 +177,8 @@ section.portada a {
 }
 section.portada a:hover {
   cursor: pointer;
-  color: var(--color-principal);
-  border-color: var(--color-principal);
+  color: var(--color-blanco);
+  border-color: var(--color-blanco);
 }
 @media print {
   section.portada {
@@ -203,25 +204,25 @@ section.portfolio .bottom article {
 section.portfolio .top article h2,
 section.portfolio .bottom article h2 {
   font-size: 1.3vw;
-  font-family: var(--fuente-titulos) sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: 600;
   color: var(--color-enfasis);
   margin-bottom: 2rem;
 }
 section.portfolio .top article p,
 section.portfolio .bottom article p {
-  font-family: var(--fuente-texto) "Segoe UI" sans-serif;
+  font-family: var(--fuente-texto);
   font-weight: 300;
   font-size: 1.2vw;
   line-height: 1.6vw;
-  color: var(--color-principal);
+  color: var(--color-blanco);
 }
 section.portfolio .top article .trabajo h3,
 section.portfolio .bottom article .trabajo h3 {
   font-size: 1.1vw;
-  font-family: var(--fuente-titulos) sans-serif;
+  font-family: var(--fuente-titulos);
   font-weight: bold;
-  color: var(--color-principal);
+  color: var(--color-blanco);
 }
 section.portfolio .top article .trabajo h3 span,
 section.portfolio .bottom article .trabajo h3 span {
@@ -255,6 +256,86 @@ section.portfolio .bottom article .tecnologias img {
   flex: 1 0 21%;
   width: 8rem;
   height: 8rem;
+}
+section.contacto {
+  align-items: center;
+  justify-content: center;
+}
+section.contacto article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-blanco);
+  width: 75%;
+  height: 75%;
+}
+section.contacto article h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 3rem;
+  color: var(--color-secundario);
+}
+section.contacto article form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+  height: 70%;
+  margin-top: 3rem;
+  justify-content: space-evenly;
+}
+section.contacto article form .formgroup {
+  width: 50%;
+  text-align: center;
+}
+section.contacto article form .formgroup.entero {
+  width: 100%;
+}
+section.contacto article form .formgroup label {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-secundario);
+}
+section.contacto article form .formgroup input,
+section.contacto article form .formgroup textarea {
+  font-family: var(--fuente-texto);
+  display: block;
+  color: var(--color-secundario);
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0 1rem;
+  border: 2px solid var(--color-secundario);
+  border-radius: 20px;
+}
+section.contacto article form .formgroup input:focus,
+section.contacto article form .formgroup textarea:focus {
+  outline: none;
+  border-color: var(--color-oscuro);
+}
+section.contacto article form .formgroup input {
+  height: 4rem;
+  width: 11vw;
+}
+section.contacto article form .formgroup textarea {
+  width: 73%;
+  height: 12rem;
+}
+section.contacto article form input[type=submit] {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  height: 4.5rem;
+  width: 20rem;
+  border: none;
+  border-radius: 20px;
+}
+@media (min-width: 1599px) {
+  section.contacto article form input[type=submit] {
+    font-size: 1.6rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

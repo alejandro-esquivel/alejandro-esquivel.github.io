@@ -90,7 +90,26 @@
           </article>
         </div>
       </section>
-      <section class="contacto" id="contacto"></section>
+      <section class="contacto" id="contacto">
+        <article>
+          <h2>CONTACTO</h2>
+          <form enctype="multipart/form-data" name="contacto">
+            <div class="formgroup">
+              <label for="nombre">NOMBRE</label>
+              <input type="text" name="nombre" />
+            </div>
+            <div class="formgroup">
+              <label for="correo">CORREO</label>
+              <input type="email" name="correo" />
+            </div>
+            <div class="formgroup entero">
+              <label for="texto">MENSAJE</label>
+              <textarea name="texto"></textarea>
+            </div>
+            <input type="submit" value="ENVIAR MENSAJE" />
+          </form>
+        </article>
+      </section>
     </div>
   </body>
 </html>
