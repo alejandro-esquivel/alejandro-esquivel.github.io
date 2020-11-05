@@ -16,7 +16,7 @@
 }
 
 html {
-  font-size: 76.5%;
+  font-size: 72.5%;
   scroll-behavior: smooth;
 }
 
@@ -140,6 +140,10 @@ nav {
       width: 82%;
     }
   }
+
+  @media (min-width: 1200px) {
+    width: 25%;
+  }
 }
 
 section {
@@ -150,45 +154,127 @@ section {
   background-color: #272822;
   height: 100vh;
   flex: 1 0 auto;
-}
 
-.portada {
-  background-color: unset;
-  justify-content: center;
-  align-items: center;
+  &.portada {
+    background-color: unset;
+    justify-content: center;
+    align-items: center;
 
-  @media print {
-    display: none;
+    h1 {
+      color: var(--color-principal);
+      font-family: var(--fuente-texto) sans-serif;
+      font-size: 2.5rem;
+      font-weight: 300;
+      padding: 0 3rem;
+      text-align: center;
+
+      b {
+        color: var(--color-enfasis);
+      }
+    }
+
+    a {
+      background: none;
+      font-size: 2rem;
+      font-weight: 300;
+      text-decoration: none;
+      margin-top: 1rem;
+      padding: 1.2rem 1.7rem;
+      color: var(--color-enfasis);
+      border: 2px solid var(--color-enfasis);
+      border-radius: 14px;
+      transition: color 0.2s linear, border-color 0.2s linear;
+
+      &:hover {
+        cursor: pointer;
+        color: var(--color-principal);
+        border-color: var(--color-principal);
+      }
+    }
+
+    @media print {
+      display: none;
+    }
   }
-}
 
-.portada h1 {
-  color: var(--color-principal);
-  font-family: var(--fuente-texto) sans-serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  padding: 0 3rem 1rem 3rem;
-  text-align: center;
-}
+  &.portfolio {
+    .top,
+    .bottom {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      height: 50%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.1);
+      align-items: center;
 
-.portada h1 b {
-  color: var(--color-enfasis);
-}
+      article {
+        height: 80%;
+        width: 25%;
+        margin-top: 1rem;
 
-.portada a {
-  background: none;
-  font-size: 2rem;
-  font-weight: 300;
-  text-decoration: none;
-  padding: 1.2rem 1.7rem;
-  color: var(--color-enfasis);
-  border: 2px solid var(--color-enfasis);
-  border-radius: 14px;
-  transition: color 0.2s linear, border-color 0.2s linear;
-}
+        h2 {
+          font-size: 1.3vw;
+          font-family: var(--fuente-titulos) sans-serif;
+          font-weight: 600;
+          color: var(--color-enfasis);
+          margin-bottom: 2rem;
+        }
 
-.portada a:hover {
-  cursor: pointer;
-  color: var(--color-principal);
-  border-color: var(--color-principal);
+        p {
+          font-family: var(--fuente-texto) 'Segoe UI' sans-serif;
+          font-weight: 300;
+          font-size: 1.2vw;
+          line-height: 1.6vw;
+          color: var(--color-principal);
+        }
+
+        .trabajo {
+          h3 {
+            font-size: 1.1vw;
+            font-family: var(--fuente-titulos) sans-serif;
+            font-weight: bold;
+            color: var(--color-principal);
+            span {
+              font-weight: 300;
+            }
+          }
+
+          p {
+            font-size: 0.9vw;
+            line-height: 1.2vw;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+
+    .bottom {
+      article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 80%;
+
+        .tecnologias {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: space-between;
+          justify-content: space-between;
+          width: 68%;
+          height: 47%;
+          margin-top: 2rem;
+          flex-direction: row;
+
+          img {
+            flex: 1 0 21%;
+            width: 8rem;
+            height: 8rem;
+          }
+        }
+      }
+    }
+  }
 }
