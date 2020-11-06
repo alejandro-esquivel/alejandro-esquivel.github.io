@@ -47,7 +47,6 @@ nav {
   height: 100%;
   position: fixed;
 
-
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -207,7 +206,6 @@ section {
   }
 
   &.portfolio {
-
     .userDetails {
       display: none;
       width: 50%;
@@ -236,8 +234,6 @@ section {
           display: block;
         }
       }
-
-
 
       @media print {
         display: flex;
