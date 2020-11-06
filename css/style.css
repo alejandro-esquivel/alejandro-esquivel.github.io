@@ -1,8 +1,8 @@
 @import 'fonts.css';
 :root {
-  --imagen-fondo: url("../images/fondo.jpg");
-  --fuente-titulos: "Roboto";
-  --fuente-texto: "Open Sans";
+  --imagen-fondo: url('../images/fondo.jpg');
+  --fuente-titulos: 'Roboto';
+  --fuente-texto: 'Open Sans';
   --color-secundario: #a72608;
   --color-blanco: #e9e9ec;
   --color-enfasis: #ffe74c;
@@ -24,12 +24,16 @@ body {
   background-image: var(--imagen-fondo);
   background-size: cover;
   background-attachment: fixed;
-}
-
-.contenedor {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+@media print {
+  body {
+    background-image: none;
+  }
 }
 
 nav {
@@ -44,6 +48,7 @@ nav {
   height: 100%;
   position: fixed;
 }
+
 nav .wrapper {
   display: flex;
   flex-direction: column;
@@ -51,87 +56,113 @@ nav .wrapper {
   height: 93%;
   justify-content: space-between;
 }
+
 nav .wrapper .usuario {
   align-self: center;
   text-align: center;
   margin-top: 5rem;
 }
+
 nav .wrapper .usuario img {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
 }
+
 @media (min-width: 1900px) {
   nav .wrapper .usuario img {
     width: 13rem;
     height: 13rem;
   }
 }
+
 nav .wrapper h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
 }
+
 @media (min-width: 1900px) {
   nav .wrapper h2 {
     font-size: 1.8rem;
   }
 }
+
 nav .wrapper h3 {
   font-size: 1.2rem;
   font-weight: 300;
 }
+
 @media (min-width: 1900px) {
   nav .wrapper h3 {
     font-size: 1.5rem;
   }
 }
+
 nav .wrapper .navegacion {
   list-style: none;
 }
+
 nav .wrapper .navegacion li {
   margin: 1rem 0;
 }
+
 nav .wrapper .navegacion li a {
   font-size: 1.4rem;
   color: var(--color-blanco);
   text-decoration: none;
   transition: color 0.3s linear;
 }
+
 nav .wrapper .navegacion li a:hover {
   color: var(--color-enfasis);
 }
+
 @media (min-width: 2000px) {
   nav .wrapper .navegacion li a {
     font-size: 1.8rem;
   }
 }
+
 nav .wrapper .redes {
   margin-right: auto;
 }
+
 nav .wrapper .redes h2 {
   margin-top: initial;
   font-weight: 300;
   display: block;
 }
+
 nav .wrapper .redes .contenedorLogos {
   margin-top: 1.5rem;
 }
+
 nav .wrapper .redes .contenedorLogos a {
   width: 3rem;
   height: 3rem;
 }
+
 nav .wrapper .redes .contenedorLogos a img {
   width: inherit;
   height: inherit;
 }
+
 nav .wrapper .redes .contenedorLogos a:nth-child(1) {
   margin-right: 1rem;
 }
+
 @media (min-width: 1200px) {
   nav .wrapper {
     width: 82%;
   }
 }
+
+@media print {
+  nav {
+    display: none;
+  }
+}
+
 @media (min-width: 1200px) {
   nav {
     width: 25%;
@@ -147,11 +178,13 @@ section {
   height: 100vh;
   flex: 1 0 auto;
 }
+
 section.portada {
   background-color: unset;
   justify-content: center;
   align-items: center;
 }
+
 section.portada h1 {
   color: var(--color-blanco);
   font-family: var(--fuente-texto);
@@ -160,9 +193,11 @@ section.portada h1 {
   padding: 0 3rem;
   text-align: center;
 }
+
 section.portada h1 b {
   color: var(--color-enfasis);
 }
+
 section.portada a {
   background: none;
   font-size: 2rem;
@@ -175,16 +210,55 @@ section.portada a {
   border-radius: 14px;
   transition: color 0.2s linear, border-color 0.2s linear;
 }
+
 section.portada a:hover {
   cursor: pointer;
   color: var(--color-blanco);
   border-color: var(--color-blanco);
 }
+
 @media print {
   section.portada {
     display: none;
   }
 }
+
+section.portfolio .userDetails {
+  display: none;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+
+section.portfolio .userDetails img {
+  float: left;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 50%;
+}
+
+section.portfolio .userDetails h2 {
+  font-size: 1.8rem;
+  color: var(--color-blanco);
+  margin-left: 17rem;
+  width: 30rem;
+  text-align: center;
+}
+
+section.portfolio .userDetails h2 span {
+  font-size: 1.5rem;
+  font-weight: normal;
+  display: block;
+}
+
+@media print {
+  section.portfolio .userDetails {
+    display: flex;
+  }
+}
+
 section.portfolio .top,
 section.portfolio .bottom {
   display: flex;
@@ -192,15 +266,16 @@ section.portfolio .bottom {
   justify-content: space-evenly;
   height: 50%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
   align-items: center;
 }
+
 section.portfolio .top article,
 section.portfolio .bottom article {
   height: 80%;
   width: 25%;
   margin-top: 1rem;
 }
+
 section.portfolio .top article h2,
 section.portfolio .bottom article h2 {
   font-size: 1.3vw;
@@ -209,6 +284,7 @@ section.portfolio .bottom article h2 {
   color: var(--color-enfasis);
   margin-bottom: 2rem;
 }
+
 section.portfolio .top article p,
 section.portfolio .bottom article p {
   font-family: var(--fuente-texto);
@@ -217,6 +293,7 @@ section.portfolio .bottom article p {
   line-height: 1.6vw;
   color: var(--color-blanco);
 }
+
 section.portfolio .top article .trabajo h3,
 section.portfolio .bottom article .trabajo h3 {
   font-size: 1.1vw;
@@ -224,10 +301,12 @@ section.portfolio .bottom article .trabajo h3 {
   font-weight: bold;
   color: var(--color-blanco);
 }
+
 section.portfolio .top article .trabajo h3 span,
 section.portfolio .bottom article .trabajo h3 span {
   font-weight: 300;
 }
+
 section.portfolio .top article .trabajo p,
 section.portfolio .bottom article .trabajo p {
   font-size: 0.9vw;
@@ -235,6 +314,7 @@ section.portfolio .bottom article .trabajo p {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
+
 section.portfolio .bottom article {
   display: flex;
   flex-direction: column;
@@ -242,6 +322,7 @@ section.portfolio .bottom article {
   height: 100%;
   width: 80%;
 }
+
 section.portfolio .bottom article .tecnologias {
   display: flex;
   flex-wrap: wrap;
@@ -252,15 +333,25 @@ section.portfolio .bottom article .tecnologias {
   margin-top: 2rem;
   flex-direction: row;
 }
+
 section.portfolio .bottom article .tecnologias img {
   flex: 1 0 21%;
   width: 8rem;
   height: 8rem;
+  margin-top: 3rem;
 }
+
+@media print {
+  section.portfolio {
+    width: 100%;
+  }
+}
+
 section.contacto {
   align-items: center;
   justify-content: center;
 }
+
 section.contacto article {
   display: flex;
   flex-direction: column;
@@ -269,12 +360,14 @@ section.contacto article {
   width: 75%;
   height: 75%;
 }
+
 section.contacto article h2 {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 3rem;
   color: var(--color-secundario);
 }
+
 section.contacto article form {
   display: flex;
   flex-direction: row;
@@ -284,19 +377,23 @@ section.contacto article form {
   margin-top: 3rem;
   justify-content: space-evenly;
 }
+
 section.contacto article form .formgroup {
   width: 50%;
   text-align: center;
 }
+
 section.contacto article form .formgroup.entero {
   width: 100%;
 }
+
 section.contacto article form .formgroup label {
   font-family: var(--fuente-titulos);
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--color-secundario);
 }
+
 section.contacto article form .formgroup input,
 section.contacto article form .formgroup textarea {
   font-family: var(--fuente-texto);
@@ -309,20 +406,25 @@ section.contacto article form .formgroup textarea {
   border: 2px solid var(--color-secundario);
   border-radius: 20px;
 }
+
 section.contacto article form .formgroup input:focus,
 section.contacto article form .formgroup textarea:focus {
   outline: none;
   border-color: var(--color-oscuro);
 }
+
 section.contacto article form .formgroup input {
   height: 4rem;
   width: 11vw;
 }
+
 section.contacto article form .formgroup textarea {
   width: 73%;
   height: 12rem;
+  padding-top: 1rem;
 }
-section.contacto article form input[type=submit] {
+
+section.contacto article form input[type='submit'] {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
   font-family: var(--fuente-titulos);
@@ -332,10 +434,16 @@ section.contacto article form input[type=submit] {
   border: none;
   border-radius: 20px;
 }
+
 @media (min-width: 1599px) {
-  section.contacto article form input[type=submit] {
+  section.contacto article form input[type='submit'] {
     font-size: 1.6rem;
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+@media print {
+  section.contacto {
+    display: none;
+  }
+}
+

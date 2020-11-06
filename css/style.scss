@@ -25,12 +25,14 @@ body {
   background-image: var(--imagen-fondo);
   background-size: cover;
   background-attachment: fixed;
-}
-
-.contenedor {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+
+  @media print {
+    background-image: none;
+  }
 }
 
 nav {
@@ -45,6 +47,7 @@ nav {
   height: 100%;
   position: fixed;
 
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -56,6 +59,7 @@ nav {
       align-self: center;
       text-align: center;
       margin-top: 5rem;
+
       img {
         width: 10rem;
         height: 10rem;
@@ -142,6 +146,10 @@ nav {
     }
   }
 
+  @media print {
+    display: none;
+  }
+
   @media (min-width: 1200px) {
     width: 25%;
   }
@@ -199,6 +207,43 @@ section {
   }
 
   &.portfolio {
+
+    .userDetails {
+      display: none;
+      width: 50%;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      margin-top: 3rem;
+
+      img {
+        float: left;
+        width: 11rem;
+        height: 11rem;
+        border-radius: 50%;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        color: var(--color-blanco);
+        margin-left: 17rem;
+        width: 30rem;
+        text-align: center;
+
+        span {
+          font-size: 1.5rem;
+          font-weight: normal;
+          display: block;
+        }
+      }
+
+
+
+      @media print {
+        display: flex;
+      }
+    }
+
     .top,
     .bottom {
       display: flex;
@@ -206,7 +251,6 @@ section {
       justify-content: space-evenly;
       height: 50%;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.1);
       align-items: center;
 
       article {
@@ -236,6 +280,7 @@ section {
             font-family: var(--fuente-titulos);
             font-weight: bold;
             color: var(--color-blanco);
+
             span {
               font-weight: 300;
             }
@@ -273,9 +318,14 @@ section {
             flex: 1 0 21%;
             width: 8rem;
             height: 8rem;
+            margin-top: 3rem;
           }
         }
       }
+    }
+
+    @media print {
+      width: 100%;
     }
   }
 
@@ -310,6 +360,7 @@ section {
         .formgroup {
           width: 50%;
           text-align: center;
+
           &.entero {
             width: 100%;
           }
@@ -347,6 +398,7 @@ section {
           textarea {
             width: 73%;
             height: 12rem;
+            padding-top: 1rem;
           }
         }
 
@@ -365,6 +417,10 @@ section {
           }
         }
       }
+    }
+
+    @media print {
+      display: none;
     }
   }
 }
