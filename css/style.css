@@ -1,4 +1,6 @@
 @import 'fonts.css';
+
+/* En esta sección se definen variables con los colores de la paleta de color, las imágenes que se usarán como fondo, y las fuentes usadas*/
 :root {
   --imagen-fondo: url('../images/fondo.jpg');
   --fuente-titulos: 'Roboto';
@@ -9,17 +11,20 @@
   --color-oscuro: #272822;
 }
 
+/* Se resetea el relleno y margen de todos los selectores, además de que se cambia el       modelo de caja a border-box para que los componentes no se hagan más grandes cuando se le añade un padding*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Se cambia el tamaño de fuente por defecto para que así 1rem sea igual a 16 pixels, también se cambia el comportamiento del scroll cuando hacemos click en los enlaces anclados de la barra de navegación*/
 html {
   font-size: 72.5%;
   scroll-behavior: smooth;
 }
 
+/*Se establece el body como un contenedor flex para así tener un mayor control sobre el posicionamiento, alineación y dirección del contenido*/
 body {
   background-image: var(--imagen-fondo);
   background-size: cover;
@@ -30,12 +35,9 @@ body {
   padding: 0;
 }
 
-@media print {
-  body {
-    background-image: none;
-  }
-}
-
+/*
+  Este es el estilo de la barra de navegación, se establece como contenedor flex y se le pone una posición fija para que se mantenga en pantalla aunque se haga scroll en el documento. este nav desaparecerá cuando la página web se imprima y la imágen de perfil se mostrará en la sección de portfolio
+*/
 nav {
   display: flex;
   flex-direction: column;
@@ -49,6 +51,7 @@ nav {
   position: fixed;
 }
 
+/* Dentro de este wrapper va todo el contenido del nav, con este wrapper he conseguido que los enlaces de navegación y la sección de redes sociales tengan el mismo margen al aplicarle una longitud y altura*/
 nav .wrapper {
   display: flex;
   flex-direction: column;
@@ -64,8 +67,8 @@ nav .wrapper .usuario {
 }
 
 nav .wrapper .usuario img {
-  width: 10rem;
-  height: 10rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
 }
 
@@ -157,19 +160,14 @@ nav .wrapper .redes .contenedorLogos a:nth-child(1) {
   }
 }
 
-@media print {
-  nav {
-    display: none;
-  }
-}
-
 @media (min-width: 1200px) {
   nav {
     width: 25%;
   }
 }
 
-section {
+/* Estilo para las secciones. Usan toda la altura del navegador gracias a 100vh, que significa Viewport height*/
+body > section {
   display: flex;
   width: 75%;
   margin-left: auto;
@@ -177,6 +175,7 @@ section {
   background-color: #272822;
   height: 100vh;
   flex: 1 0 auto;
+  scroll-snap-align: center;
 }
 
 section.portada {
@@ -217,12 +216,6 @@ section.portada a:hover {
   border-color: var(--color-blanco);
 }
 
-@media print {
-  section.portada {
-    display: none;
-  }
-}
-
 section.portfolio .userDetails {
   display: none;
   width: 50%;
@@ -251,12 +244,6 @@ section.portfolio .userDetails h2 span {
   font-size: 1.5rem;
   font-weight: normal;
   display: block;
-}
-
-@media print {
-  section.portfolio .userDetails {
-    display: flex;
-  }
 }
 
 section.portfolio .top,
@@ -323,6 +310,7 @@ section.portfolio .bottom article {
   width: 80%;
 }
 
+/* Estilo para la lista de tecnologías,  */
 section.portfolio .bottom article .tecnologias {
   display: flex;
   flex-wrap: wrap;
@@ -334,6 +322,7 @@ section.portfolio .bottom article .tecnologias {
   flex-direction: row;
 }
 
+/* Con la propiedad flex consigo que hayan 4 tecnologías por linea gracias al tercer valor, que hace que tengan una longitud del 21% */
 section.portfolio .bottom article .tecnologias img {
   flex: 1 0 21%;
   width: 8rem;
@@ -341,17 +330,12 @@ section.portfolio .bottom article .tecnologias img {
   margin-top: 3rem;
 }
 
-@media print {
-  section.portfolio {
-    width: 100%;
-  }
-}
-
 section.contacto {
   align-items: center;
   justify-content: center;
 }
 
+/* Metí el formulario dentro de un article para así tener más control sobre su posicionamiento gracias al contenedor flex*/
 section.contacto article {
   display: flex;
   flex-direction: column;
@@ -441,8 +425,29 @@ section.contacto article form input[type='submit'] {
   }
 }
 
+/* Estilo para cuando se imprime el documento*/
 @media print {
+  body {
+    background-image: none;
+  }
+
   section.contacto {
     display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  section.portada {
+    display: none;
+  }
+
+  section.portfolio .userDetails {
+    display: flex;
+  }
+
+  section.portfolio {
+    width: 100%;
   }
 }

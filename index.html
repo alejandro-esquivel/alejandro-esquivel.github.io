@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Portfolio</title>
   </head>
   <body>
     <nav>
       <div class="wrapper">
-        <div class="usuario">
+        <section class="usuario">
           <img
             src="images/perfil.jpg"
             alt="Imágen de perfil de Alejandro Esquivel"
           />
           <h2>ALEJANDRO ESQUIVEL</h2>
           <h3>DESARROLLADOR WEB FRONT-END</h3>
-        </div>
+        </section>
         <ul class="navegacion">
           <li><a href="#portada">Portada</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
-        <div class="redes">
+        <section class="redes">
           <h2>REDES SOCIALES</h2>
           <div class="contenedorLogos">
             <a
@@ -36,7 +38,7 @@
                 alt="Enlace al repositorio de Github"
             /></a>
           </div>
-        </div>
+        </section>
       </div>
     </nav>
     <section class="portada" id="portada">
@@ -100,7 +102,11 @@
     <section class="contacto" id="contacto">
       <article>
         <h2>CONTACTO</h2>
-        <form enctype="multipart/form-data" name="contacto" action="mailto:yoquiale@gmail.com">
+        <form
+          enctype="multipart/form-data"
+          name="contacto"
+          action="mailto:yoquiale@gmail.com"
+        >
           <div class="formgroup">
             <label for="nombre">NOMBRE</label>
             <input type="text" name="nombre" />
