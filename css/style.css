@@ -199,8 +199,9 @@ section.portada h1 b {
 
 section.portada a {
   background: none;
-  font-size: 2rem;
-  font-weight: 300;
+  font-family: var(--fuente-titulos);
+  font-size: 1.8rem;
+  font-weight: 400;
   text-decoration: none;
   margin-top: 1rem;
   padding: 1.2rem 1.7rem;
