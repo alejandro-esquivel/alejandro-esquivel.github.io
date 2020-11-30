@@ -347,6 +347,8 @@ section.contacto article {
 }
 
 section.contacto article h2 {
+  font-family: var(--fuente-titulos);
+  letter-spacing: 0.1rem;
   font-size: 2rem;
   font-weight: bold;
   margin-top: 3rem;
