@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio preguntas test</title>
+    <style>
+    section {
+      display: grid;
+      margin-top: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 15px;
+      min-height: 750px;
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    article {
+      border: 1px solid black;
+      padding: 0 20px;
+      background-color: lightgrey;
+    }
+
+    li.acierto {
+      font-weight: bolder;
+    }
+
+    </style>
+    <script>
+      /* Se define el array con las preguntas, las pregunta se definen con el objeto"Pregunta".
+         A este objeto se le pasan 3 parámetros: La pregunta, las respuestas y la respuesta correcta */
+      var arrayPreguntas = [
+        new Pregunta(
+          'Con cuál de las siguientes muestras de código se puede mostrar un mensaje emergente?:',
+          ['prompt', 'question', 'alert', 'window'],
+          'alert'
+        ),
+        new Pregunta(
+          'Cómo se importa un archivo javascript externo?:',
+          [
+            'link rel="application/javascript" href="script.js"',
+            'meta name="script" description="script.js"',
+            'script type="text/javascript" src="script.java"',
+            'script type="application/javascript" src="script.js"',
+          ],
+          'script type="application/javascript" src="script.js"'
+        ),
+        new Pregunta(
+          'Cómo se define una variable simple en javascript?: ',
+          ['int', 'define', '$', 'var'],
+          'var'
+        ),
+        new Pregunta(
+          'Cómo se asigna una variable en javascript?:',
+          [':=', '===', '=', '=:'],
+          '='
+        ),
+        new Pregunta(
+          'Qué escribe el siguiente comando?:\n document.write("hola".mundo);',
+          ['hola mundo', 'undefined', 'Syntax error', 'holamundo'],
+          'undefined'
+        ),
+        new Pregunta(
+          'Cuál de los siguientes operadores no es válido en javascript?',
+          ['while', 'for', 'switch', 'swtich'],
+          'swtich'
+        ),
+        new Pregunta(
+          'Cómo se puede obtener el día actual?',
+          [
+            'new Date().getDay()',
+            'new Date().GetDay()',
+            'Date.getDay()',
+            'new Date.getCurrentDay()',
+          ],
+          'new Date().getDay()'
+        ),
+        new Pregunta(
+          'Cómo se verifica que una variable no sea un número?:',
+          ['isNumber()', 'isNaN()', 'isNotNumber()', 'isString()'],
+          'isNaN()'
+        ),
+        new Pregunta(
+          'Cómo se obtiene la longitud de una cadena o array?:',
+          ['longitude', 'width()', 'length()', 'length'],
+          'length'
+        ),
+        new Pregunta(
+          'Cómo se crea una ventana nueva?:',
+          [
+            'document.createWindow()',
+            'new Window()',
+            'window.open()',
+            'document.openWindow()',
+          ],
+          'window.open()'
+        ),
+        new Pregunta(
+          'Cómo se muestra una cadena en negrita?:',
+          ['fontWeight', 'bold()', 'setBold', 'changeWeight'],
+          'bold()'
+        ),
+        new Pregunta(
+          'Cómo se le cambia el color a una cadena?:',
+          ['setColor', 'color()', 'style.fontColor', 'fontColor()'],
+          'fontcolor()'
+        ),
+        new Pregunta(
+          'Cómo se le cambia el tamaño a una cadena?:',
+          ['setSize()', 'style.size()', 'fontsize()', 'size()'],
+          'fontsize()'
+        ),
+        new Pregunta(
+          'Cómo se obtiene la ruta de la página actual?:',
+          [
+            'getRoute()',
+            'document.URL',
+            'document.Direction',
+            'document.getFullRoute',
+          ],
+          'document.URL'
+        ),
+        new Pregunta(
+          'Cómo se obtiene el texto seleccionado del documento?:',
+          [
+            'document.getSelection()',
+            'window.selectionCopy()',
+            'copySelection()',
+            'getSelectionText',
+          ],
+          'document.getSelection()'
+        ),
+        new Pregunta(
+          'Cómo se recarga la página actual?',
+          [
+            'windows.reloadCurrentSite()',
+            'reloadCurrentLocation()',
+            'document.reloadLocation();',
+            'location.reload()',
+          ],
+          'location.reload()'
+        ),
+        new Pregunta(
+          'Cómo se puede codificar un carácter?:',
+          [
+            'document.specialCharacters()',
+            'htmlspecialchars()',
+            'escape()',
+            'window.escapeString()',
+          ],
+          'escape()'
+        ),
+        new Pregunta(
+          'Cómo se puede añadir un elemento nuevo al inicio de un array?',
+          [
+            'array.shift()',
+            'array.addToStart()',
+            'array.unshift()',
+            'array.startValue()',
+          ],
+          'array.unshift()'
+        ),
+        new Pregunta(
+          'Cómo se puede juntar un array en una cadena?',
+          [
+            'concatArray()',
+            'Array.join()',
+            'Array.concat()',
+            'document.joinArray()',
+          ],
+          'Array.join()'
+        ),
+        new Pregunta(
+          'Cómo se le puede añadir una nueva propiedad o método a todos los arrays?',
+          [
+            'Array.prototype.nueva_propiedad_o_metodo',
+            'document.newArrayProperty()',
+            'Array.nueva_propiedad_o_método',
+            'createNewArrayMethod()',
+          ],
+          'Array.prototype.nueva_propiedad_o_metodo'
+        ),
+      ];
+      var preguntas = [];
+      var aciertos = 0;
+
+      /* Objeto Pregunta, además de los parámetros explicados anteriormente, tiene 2 propiedades ocultas,
+      una es la respuesta dada, que es la respuesta ingresada por el usuario y la otra, acierto, que es un booleano.
+      Tiene 2 métodos, responder y verificarAcierto. El método responder recibe como parámetro la respuesta,
+      verifica si las respuestas son a, b, c, d, en el caso de que lo sean, procede a verificar si la respuesta es correcta, si la respuesta no es correcta, mostrará un mensaje que le dice al usuario que la respuesta no es correcta.
+      Si la respuesta no es ni a, b, c o d entonces mostrará un mensaje de error y da la pregunta por fallida.*/
+      function Pregunta(pregunta, respuestas, respuesta) {
+        this.pregunta = pregunta;
+        this.respuestas = respuestas;
+        this.respuestaCorrecta = respuesta;
+        this.respuestaDada = '';
+        this.textoRespuestaDada = '';
+        this.acierto = false;
+
+        this.responder = function (resp) {
+          if (resp != null) {
+            this.respuestaDada = resp;
+          }
+          if (this.respuestaDada != '') {
+            switch (resp.toLowerCase()) {
+              case 'a':
+                this.verificarAcierto(this.respuestas[0]);
+                break;
+              case 'b':
+                this.verificarAcierto(this.respuestas[1]);
+                break;
+              case 'c':
+                this.verificarAcierto(this.respuestas[2]);
+                break;
+              case 'd':
+                this.verificarAcierto(this.respuestas[3]);
+                break;
+              default:
+                alert('La opción introducida ha de ser A, B, C o D');
+                break;
+            }
+          } else {
+            alert('No has introducido nada o has cancelado la pregunta');
+          }
+        };
+
+        this.verificarAcierto = function (resp) {
+          this.textoRespuestaDada = resp;
+          if (this.respuestaCorrecta == resp) {
+            this.acierto = true;
+            alert('Has acertado la respuesta');
+          } else {
+            alert('La respuesta que has introducido no es la correcta');
+          }
+        };
+      }
+
+      var respuestas;
+
+      // Esta función muestra las preguntas, sus respuestas y le permite al usuario introducir la respuesta que crea correcta
+      function preguntar() {
+        for (var i = 0; i < preguntas.length; i++) {
+          var respuesta = prompt(
+            preguntas[i].pregunta +
+              '\n' +
+              'A: ' +
+              preguntas[i].respuestas[0] +
+              '\n' +
+              'B: ' +
+              preguntas[i].respuestas[1] +
+              '\n' +
+              'C: ' +
+              preguntas[i].respuestas[2] +
+              '\n' +
+              'D: ' +
+              preguntas[i].respuestas[3] +
+              '\n' +
+              'Para la respuesta, introduce A, B, C o D.'
+          );
+          preguntas[i].responder(respuesta);
+        }
+      }
+
+      // Función que añade al array de preguntas 15 preguntas.
+      function elegirPreguntas() {
+        for (var i = 0; i < 15; i++) {
+          preguntas.push(arrayPreguntas[i]);
+        }
+
+        // console.table(arrayPreguntas); // <- Muestra una tabla con las preguntas en la consolla
+      }
+
+      // Función que ordena un array de forma aleatoria, recibe como parámetro el array a ordenar.
+      function ordenarArray(arr) {
+        var arrTemp = arr;
+        arrTemp.sort(function () {
+          return Math.random() - 0.5;
+        });
+        return arrTemp;
+      }
+
+      // Función que ordena tanto las preguntas como las respuestas
+      function ordenarPreguntasYRespuestas() {
+        var arrPreguntas;
+        var preguntasTemp = ordenarArray(arrayPreguntas);
+        arrayPreguntas = preguntasTemp;
+
+        for (var i = 0; i < arrayPreguntas.length; i++) {
+          arrPreguntas = arrayPreguntas[i].respuestas;
+          arrPreguntas = ordenarArray(arrPreguntas);
+          arrayPreguntas[i].respuestas = arrPreguntas;
+        }
+      }
+
+      // Esta función recorre el array que contiene las preguntas y verifica que la propiedad acierto sea true
+      function obtenerAciertos() {
+        var aciertos = 0;
+        for (var i = 0; i < preguntas.length; i++) {
+          if (preguntas[i].acierto) {
+            aciertos++;
+          }
+        }
+        return aciertos;
+      }
+
+      // Muestra en pantalla cuántas preguntas se han acertado
+      function escribirResultado() {
+        var aciertos = obtenerAciertos();
+        document.write('<h1>Resultado: </h1>');
+        document.write(
+          '<h2>' + aciertos + ' de ' + preguntas.length + ' preguntas acertadas</h2>'
+        );
+
+        document.write('<h2>Respuestas dadas:</h2>');
+        document.write('<section>');
+
+        for (var i = 0; i < preguntas.length; i++) {
+          document.write('<article>');
+          document.write('<h3>' + preguntas[i].pregunta + '</h3>');
+          document.write('<ul>');
+
+          for (var j = 0; j < preguntas[i].respuestas.length; j++) {
+            console.group(preguntas[i].pregunta);
+            console.log(preguntas[i].respuestas[j]);
+            console.log(preguntas[i].respuestaDada);
+            console.groupEnd();
+            if (preguntas[i].textoRespuestaDada == preguntas[i].respuestas[j]) {
+              document.write(
+                '<li class="acierto">' + preguntas[i].respuestas[j] + '</li>'
+              );
+            } else {
+              document.write('<li>' + preguntas[i].respuestas[j] + '</li>');
+            }
+          }
+
+          document.write('</ul>');
+          document.write('</article>');
+        }
+        document.write('</section>');
+      }
+
+      ordenarPreguntasYRespuestas();
+      elegirPreguntas();
+
+      preguntar();
+      escribirResultado();
+    </script>
+  </head>
+  <body></body>
+</html>
