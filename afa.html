@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AFA</title>
+    <style>
+      .escena {
+        width: 500px;
+        height: 500px;
+        margin: auto;
+        margin-top: 200px;
+        perspective: 800px;
+      }
+
+      .caja {
+        width: 400px;
+        height: 400px;
+
+        transform-style: preserve-3d;
+        transition: transform 1s;
+      }
+
+      .caja:hover {
+        transform: rotate3d(0, 1, 0, 180deg);
+      }
+
+      .cara {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        color: white;
+        backface-visibility: hidden;
+      }
+
+      .delante {
+        background-color: rgba(23, 125, 42, 1);
+      }
+
+      .atras {
+        background-color: rgba(125, 23, 100, 1);
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="escena">
+      <article class="caja">
+        <div class="cara delante">Afa</div>
+        <div class="cara atras">👌</div>
+      </article>
+    </div>
+  </body>
+</html>
