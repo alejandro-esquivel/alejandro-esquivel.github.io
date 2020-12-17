@@ -5,50 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AFA</title>
     <style>
-      body{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      .escena {
-        width: 500px;
-        height: 500px;
-        perspective: 800px;
-      }
+      body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.escena {
+  width: 500px;
+  height: 500px;
+  perspective: 800px;
+}
 
-      .caja {
-        width: 400px;
-        height: 400px;
+.escena:hover > .caja{
+  transform: rotate3d(0, 1, 0, 180deg);
+}
 
-        transform-style: preserve-3d;
-        transition: transform 0.55s ease-out;
-      }
+.caja {
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease-out;
+}
 
-      .caja:hover {
-        transform: rotate3d(0, 1, 0, 180deg);
-      }
+.cara {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  color: white;
+  backface-visibility: hidden;
+}
 
-      .cara {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 80px;
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        color: white;
-        backface-visibility: hidden;
-      }
+.delante {
+  background-color: rgba(23, 125, 42, 1);
+}
 
-      .delante {
-        background-color: rgba(23, 125, 42, 1);
-      }
+.atras {
+  background-color: rgba(125, 23, 100, 1);
+  transform: rotateY(180deg);
+}
 
-      .atras {
-        background-color: rgba(125, 23, 100, 1);
-        transform: rotateY(180deg);
-      }
     </style>
   </head>
   <body>
