@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="wrapper">
+        <section class="usuario">
+          <img
+            src="images/perfil.jpg"
+            alt="Imágen de perfil de Alejandro Esquivel"
+          />
+          <h2>ALEJANDRO ESQUIVEL</h2>
+          <h3>DESARROLLADOR WEB FRONT-END</h3>
+        </section>
+        <ul class="navegacion">
+          <li><a href="#portada">Portada</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <section class="redes">
+          <h2>REDES SOCIALES</h2>
+          <div class="contenedorLogos">
+            <a
+              href="https://www.linkedin.com/in/alejandro-esquivel-rodriguez/"
+              target="_blank"
+              ><img
+                src="images/LI-In-Bug.svg"
+                alt="Enlace al perfil de Linkedin"
+            /></a>
+            <a href="https://github.com/aleaallee" target="_blank"
+              ><img
+                src="images/GitHubLight.png"
+                alt="Enlace al repositorio de Github"
+            /></a>
+          </div>
+        </section>
+      </div>
+    </nav>
+    <section class="portada" id="portada">
+      <h1>
+        Hola, soy <b>Alejandro Esquivel</b>,<br />
+        desarrollador web especializado en el front-end
+      </h1>
+      <a href="#portfolio">Portafolio</a>
+    </section>
+    <section class="portfolio" id="portfolio">
+      <div class="userDetails">
+        <img src="images/perfil.jpg" alt="Imágen de Alejandro Esquivel" />
+        <h2>
+          ALEJANDRO ESQUIVEL
+          <span>DESARROLLADOR WEB FRONT-END</span>
+        </h2>
+      </div>
+      <div class="top">
+        <article>
+          <h2>ACERCA DE MÍ</h2>
+          <p>
+            Técnico en administración de sistemas en red y desarrollo de
+            aplicaciones web al que le gusta aprender nuevas tecnologías,
+            librerías y frameworks en el ámbito del desarrollo web
+          </p>
+        </article>
+        <article>
+          <h2>EXPERIENCIA</h2>
+          <div class="trabajo">
+            <h3>IMSP Badalona <span> - 2014</span></h3>
+            <p>
+              Informático en practicas encargado del mantenimiento de los
+              equipos de diferentes centros docentes.
+            </p>
+          </div>
+          <div class="trabajo">
+            <h3>AMVARA <span>2017 - 2018</span></h3>
+            <p>
+              Desarrollador web en practicas encargado de llevar a cabo el
+              rediseño de la página web de la empresa.
+            </p>
+          </div>
+        </article>
+      </div>
+      <div class="bottom">
+        <article>
+          <h2>TECNOLOGÍAS</h2>
+          <div class="tecnologias">
+            <img src="images/html5.svg" alt="HTML5" />
+            <img src="images/css3.svg" alt="CSS3" />
+            <img src="images/js.svg" alt="Javascript" />
+            <img src="images/sass.svg" alt="SASS" />
+            <img src="images/linux.svg" alt="Linux" />
+            <img src="images/sql.svg" alt="SQL" />
+            <img src="images/vue.svg" alt="Vue" />
+            <img src="images/php.svg" alt="PHP" />
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="contacto" id="contacto">
+      <article>
+        <h2>CONTACTO</h2>
+        <form
+          enctype="multipart/form-data"
+          name="contacto"
+          action="mailto:yoquiale@gmail.com"
+        >
+          <div class="formgroup">
+            <label for="nombre">NOMBRE</label>
+            <input type="text" name="nombre" />
+          </div>
+          <div class="formgroup">
+            <label for="correo">CORREO</label>
+            <input type="email" name="correo" />
+          </div>
+          <div class="formgroup entero">
+            <label for="texto">MENSAJE</label>
+            <textarea name="texto"></textarea>
+          </div>
+          <input type="submit" value="ENVIAR MENSAJE" />
+        </form>
+      </article>
+    </section>
+  </body>
+</html>
