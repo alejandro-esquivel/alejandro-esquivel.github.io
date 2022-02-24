@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiempo para que Elden Rings salga</title>
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quedan <span class="date"></span> para que salga Elden rings</h1>
+
+    <script>
+      const releaseDate = new Date('february 25, 2022 00:00');
+      let dateSpan = document.querySelector('.date');
+      let currentDate;
+      setInterval(() => {
+        currentDate = new Date();
+        let tempDate = new Date(releaseDate - currentDate);
+
+        dateSpan.innerHTML = `${
+          tempDate.getHours() - 1
+        } horas, ${tempDate.getMinutes()} minutos y ${tempDate.getSeconds()} segundos`;
+        console.log(tempDate.toDateString());
+      }, 1000);
+    </script>
+  </body>
+</html>
