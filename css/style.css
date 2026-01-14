@@ -2,7 +2,7 @@
 
 /* En esta sección se definen variables con los colores de la paleta de color, las imágenes que se usarán como fondo, y las fuentes usadas*/
 :root {
-  --imagen-fondo: url('../images/fondo.jpg');
+  --imagen-fondo: url('../images/fondo.webp');
   --fuente-titulos: 'Roboto';
   --fuente-texto: 'Open Sans';
   --color-secundario: #a72608;
